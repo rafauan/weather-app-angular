@@ -1,0 +1,23 @@
+<div class="dashboard">
+  <div class="weather-info">
+    <mat-card *ngIf="weatherData" [@fadeInOut]>
+      <mat-card-title>Weather Information</mat-card-title>
+      <mat-card-content>
+        <p>Temperature: {{ weatherData.current_weather.temperature }}°C</p>
+        <p>Wind Speed: {{ weatherData.current_weather.windspeed }} km/h</p>
+        <p>Weather Code: {{ weatherData.current_weather.weathercode }}</p>
+        <p>Latitude: {{ weatherData.latitude }}</p>
+        <p>Longitude: {{ weatherData.longitude }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="weather-form">
+    <app-weather-form (citySelected)="getWeather($event.lat, $event.lon)"></app-weather-form>
+    <div class="error" *ngIf="errorMessage" [@fadeInOut]>
+      <h5>Error!</h5>
+      <p>
+        {{ errorMessage }}
+      </p>
+    </div>
+  </div>
+</div>

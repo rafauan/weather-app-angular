@@ -1,0 +1,40 @@
+<div class="table-container">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef> City </th>
+    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="temperature">
+    <th mat-header-cell *matHeaderCellDef> Temperature (°C) </th>
+    <td mat-cell *matCellDef="let element"> {{element.temperature}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="windSpeed">
+    <th mat-header-cell *matHeaderCellDef> Wind Speed (km/h) </th>
+    <td mat-cell *matCellDef="let element"> {{element.windSpeed}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="weatherCode">
+    <th mat-header-cell *matHeaderCellDef> Weather Code </th>
+    <td mat-cell *matCellDef="let element"> {{element.weatherCode}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="latitude">
+    <th mat-header-cell *matHeaderCellDef> Latitude </th>
+    <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="longitude">
+    <th mat-header-cell *matHeaderCellDef> Longitude </th>
+    <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div *ngIf="errorMessage" class="error">
+  <p>{{ errorMessage }}</p>
+</div>
+</div>

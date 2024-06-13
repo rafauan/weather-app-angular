@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+  <mat-form-field [ngClass]="{'error-field': hasError()}">
+    <input matInput placeholder="Enter latitude" [(ngModel)]="lat" name="lat" required>
+  </mat-form-field>
+  <mat-form-field [ngClass]="{'error-field': hasError()}">
+    <input matInput placeholder="Enter longitude" [(ngModel)]="lon" name="lon" required>
+  </mat-form-field>
+  <button mat-raised-button matTooltip="Find weather details" color="primary" type="submit">Get Weather</button>
+</form>

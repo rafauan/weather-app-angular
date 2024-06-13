@@ -1,0 +1,5 @@
+.table-container {
+    background-color: #87CEEB;
+    overflow-x: auto;
+    height: calc(100vh - 130px);
+}
